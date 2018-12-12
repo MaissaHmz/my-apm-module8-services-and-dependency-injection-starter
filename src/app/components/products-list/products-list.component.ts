@@ -15,12 +15,15 @@ export class ProductsListComponent implements OnInit {
   showImage: boolean = false;
   listFilter: string = '';
 
-  products: IProduct[] =  [] ;
+  products: IProduct[];
 
   constructor(private _service: ProductsService) { } // Dependency injection !
 
   ngOnInit() {
-     this.products = this._service.getAllPoducts();
+     this._service.getAllPoducts().subscribe(
+     resultat => this.products = resultat,
+     erreur => console.log(` ATTENTION: Il y a eu erreur : {erreur} lors de l'appel REST `)
+     );
      console.log('In OnInit');
   }
   toggleImage(): void {
