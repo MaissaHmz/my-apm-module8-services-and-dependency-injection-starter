@@ -1,0 +1,23 @@
+<div class="card">
+    <div class="card-header bg-info text-white">
+      <h2>Details du produits : {{productId}} </h2>
+    </div>
+    <div class="card-body">
+      <table class="table">
+        <tbody>
+          <tr>
+            <td scope="row"><strong>Titre de produit</strong></td>
+            <td>{{product.productName}}</td>
+          </tr>
+          <tr>
+            <td scope="row"><strong>Prix de produit</strong></td>
+            <td>{{product.price}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+  <a [routerLink]="['/detail/8']" routerLinkActive="router-link-active" >Next</a>
+  <a [routerLink]="['/detail/10']" routerLinkActive="router-link-active" >Previous</a>
